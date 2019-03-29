@@ -58,15 +58,9 @@ PRIMARY KEY	(Advice_ID,Username)
 );
 CREATE TABLE Advice_Keyword(
 Advice_ID int(15) NOT NULL,
-Keyword ENUM('Career Builder','linkedin') NOT NULL,
+Keyword ENUM('Intetview','Career Advice','Personal Life','Undergrad','Postgrad') NOT NULL,
 FOREIGN KEY(Advice_ID) REFERENCES Advice(Advice_ID),
 PRIMARY KEY(Advice_ID,Keyword)
-);
-CREATE TABLE Resources(
-Resources varchar(100) NOT NULL,
-Advice_ID int(12),
-FOREIGN KEY(Advice_ID) REFERENCES Advice(Advice_ID),
-PRIMARY KEY(Resources,Advice_ID)
 );
 CREATE TABLE Job(
 Job_ID TINYINT NOT NULL,
