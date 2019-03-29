@@ -2,7 +2,6 @@
 Removed FAS.Enum Table, replaced with FAS Enum col in Person
 Person.MajorField refers to database Person, changed name to Person_MajorField to resolve conflict
 “Group” name not allowed, changed table name to Club and Group name to Club_Name
-Exact Values for accreditation enum?
-TO DO expand enum degree
+Removed accreditation
 Exact Values for keyword enum?
 “Resource” name reserved, changed name to Resources
