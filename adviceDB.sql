@@ -132,3 +132,17 @@ INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
 VALUES('Kaya G',NULL,'Faculty','2010-03-12',NULL);
 INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
 VALUES('Lane Burton','Lane N. Burton','Faculty','2020-03-02','555-465-7125, 55 Rainbow Street, Up Town, HI, Burton@uni.edu');
+INSERT INTO Person_MajorField(Major_Field,Username)
+VALUES('Computer Science','ZacP');
+INSERT INTO Person_MajorField(Major_Field,Username)
+VALUES('Computer Science','rbot15');
+INSERT INTO Person_MajorField(Major_Field,Username)
+VALUES('Computer Science,Psychics','SpinyPhish');
+INSERT INTO Person_MajorField(Major_Field,Username)
+VALUES('Psychics','RRandal');
+INSERT INTO Person_MajorField(Major_Field,Username)
+VALUES('Computer Science','Lane Burton');
+INSERT INTO Person_MajorField(Major_Field,Username)
+VALUES('Computer Science','Sven47');
+INSERT INTO Person_MajorField(Major_Field,Username)
+VALUES('Computer Science, Biology','Shannon Lawsons');
