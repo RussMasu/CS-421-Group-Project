@@ -102,3 +102,33 @@ Industry ENUM('Basic Industries','Capital Goods','Consumer Durables',
 FOREIGN KEY (Company_Name) REFERENCES Company(Company_Name),
 PRIMARY KEY (Company_Name, Industry)
 );
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('ZacP','Zac_Perry','Student','2020-05-01','zacp@fakemail.com, 555 Urban Heights, HI');
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('SpinyPhish','Kayla Matthews','Student','2021-05-01','kaybay@fakemail.com');
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('MrX',NULL,NULL,NULL,NULL);
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Tilly Burton','Tilly Burton','Student',NULL,'555-465-7125, 55 Rainbow Street, Up Town, HI, TBurton@uni.edu');
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('rbot15',NULL,'Student','2022-04-30',NULL);
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Zotius Helle','Zotius Helle','Alumni','1950-06-10','zohelle@fakemail.com');
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Sven47','Sven Asketilll','Alumni','1975-06-21',NULL);
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Shannon Lawsons','Shaelaw','Alumni',NULL,'shal@fmail.com');
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Madaline W W',NULL,'Alumni',NULL,NULL);
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Paprika','Bella Asketill',NULL,NULL,'basket@fmail.com, 555 Hilo Bay, Hilo HI 96720');
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('MrGreen','Rajnish Green','Faculty','1960-12-25','mrg@uni.edu University of Hawaii at Hilo');
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('RRandal','Ray Randall','Faculty',NULL,NULL);
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Myron R','Myron Reducto','Faculty','1992-04-02',NULL);
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Kaya G',NULL,'Faculty','2010-03-12',NULL);
+INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Lane Burton','Lane N. Burton','Faculty','2020-03-02','555-465-7125, 55 Rainbow Street, Up Town, HI, Burton@uni.edu');
