@@ -29,7 +29,7 @@ PRIMARY KEY (Club_Name,Username)
 CREATE TABLE School(
 School_Name varchar(100) NOT NULL,
 Address varchar(100) NOT NULL,
-Enrollment_Val ENUM('small','medium','large'),
+Enrollment_Val ENUM('0-4999','5000-15000','15000'),
 PRIMARY KEY(School_Name)
 );
 CREATE TABLE School_Person(
@@ -117,7 +117,7 @@ VALUES('Zotius Helle','Zotius Helle','Alumni','1950-06-10','zohelle@fakemail.com
 INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
 VALUES('Sven47','Sven Asketilll','Alumni','1975-06-21',NULL);
 INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('Shannon Lawsons','Shaelaw','Alumni',NULL,'shal@fmail.com');
+VALUES('Shaelaw','Shannon Larson','Alumni',NULL,'shal@fmail.com');
 INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
 VALUES('Madaline W W',NULL,'Alumni',NULL,NULL);
 INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
@@ -147,6 +147,54 @@ VALUES('Computer Science','Lane Burton');
 INSERT INTO Person_MajorField(Major_Field,Username)
 VALUES('Computer Science','Sven47');
 INSERT INTO Person_MajorField(Major_Field,Username)
-VALUES('Computer Science','Shannon Lawsons');
+VALUES('Computer Science','Shaelaw');
 INSERT INTO Person_MajorField(Major_Field,Username)
-VALUES('Biology','Shannon Lawsons');
+VALUES('Biology','Shaelaw');
+INSERT INTO Club(Club_Name,Site_link)
+VALUES('Honor Society',NULL);
+INSERT INTO Club(Club_Name,Site_link)
+VALUES('Association for Computing Machinery','www.acm.org');
+INSERT INTO Club(Club_Name,Site_link)
+VALUES('Circle K International','www.circlek.org');
+INSERT INTO Club_Person(Club_Name,Username)
+VALUES('Circle K International','MrX');
+INSERT INTO Club_Person(Club_Name,Username)
+VALUES('Circle K International','Tilly Burton');
+INSERT INTO Club_Person(Club_Name,Username)
+VALUES('Association for Computing Machinery','Tilly Burton');
+INSERT INTO Club_Person(Club_Name,Username)
+VALUES('Association for Computing Machinery','MrGreen');
+INSERT INTO Club_Person(Club_Name,Username)
+VALUES('Honor Society','Zotius Helle');
+INSERT INTO School(School_Name,Address,Enrollment_Val)
+VALUES('University of Hawaii at Hilo','200 W Kawili St, Hilo HI 96720','0-4999');
+INSERT INTO School(School_Name,Address,Enrollment_Val)
+VALUES('University of Hawaii at Manoa','2500 Campus Rd, Honolulu, HI 96822','5000-15000');
+INSERT INTO School(School_Name,Address,Enrollment_Val)
+VALUES('Hawaii Community College','1175 Manono Str, Hilo HI 96720','0-4999');
+INSERT INTO School_Person(School_Name,Username,Start_Date,End_Date)
+VALUES('University of Hawaii at Hilo','Kaya G','1989-06-12','1993-06-10');
+INSERT INTO School_Person(School_Name,Username,Start_Date,End_Date)
+VALUES('University of Hawaii at Hilo','Tilly Burton','2018-08-03',NULL);
+INSERT INTO School_Person(School_Name,Username,Start_Date,End_Date)
+VALUES('University of Hawaii at Hilo','rbot15','2017-08-15',NULL);
+INSERT INTO School_Person(School_Name,Username,Start_Date,End_Date)
+VALUES('University of Hawaii at Manoa','Shaelaw','1981-07-30','1987-08-25');
+INSERT INTO School_Person(School_Name,Username,Start_Date,End_Date)
+VALUES('University of Hawaii at Hilo','Sven47','2016-08-12',NULL);
+INSERT INTO School_Person(School_Name,Username,Start_Date,End_Date)
+VALUES('Hawaii Community College','ZacP','2017-08-15',NULL);
+INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
+VALUES('University of Hawaii at Hilo','Kaya G','BS Computer Science');
+INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
+VALUES('University of Hawaii at Hilo','Kaya G','MS Computer Science');
+INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
+VALUES('University of Hawaii at Hilo','Kaya G','PhD Database Management');
+INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
+VALUES('University of Hawaii at Manoa','Shaelaw','BS Computer Science');
+INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
+VALUES('University of Hawaii at Manoa','Shaelaw','BA Biology');
+INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
+VALUES('University of Hawaii at Manoa','Shaelaw','MS Microbiolgy');
+INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
+VALUES('University of Hawaii at Hilo','Sven47','BA English');
