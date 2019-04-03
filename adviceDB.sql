@@ -50,7 +50,7 @@ FOREIGN KEY(Username) REFERENCES Person(Username),
 PRIMARY KEY(School_Name,Username,Degree)
 );
 CREATE TABLE Advice(
-Advice_ID int(12) NOT NULL,
+Advice_ID int(12) NOT NULL AUTO_INCREMENT,
 Advice text,
 Username varchar(20) NOT NULL,
 FOREIGN KEY (Username) REFERENCES Person(Username),
@@ -58,7 +58,7 @@ PRIMARY KEY	(Advice_ID,Username)
 );
 CREATE TABLE Advice_Keyword(
 Advice_ID int(15) NOT NULL,
-Keyword ENUM('Intetview','Career Advice','Personal Life','Undergrad','Postgrad') NOT NULL,
+Keyword ENUM('Interview','Career Advice','Personal Life','Undergrad','Postgrad') NOT NULL,
 FOREIGN KEY(Advice_ID) REFERENCES Advice(Advice_ID),
 PRIMARY KEY(Advice_ID,Keyword)
 );
@@ -198,3 +198,21 @@ INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
 VALUES('University of Hawaii at Manoa','Shaelaw','MS Microbiolgy');
 INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
 VALUES('University of Hawaii at Hilo','Sven47','BA English');
+INSERT INTO Advice(Advice,Username)
+VALUES('Use Career Builder and be yourself.','Paprika');
+INSERT INTO Advice_Keyword(Advice_ID,Keyword)
+VALUES(1,'Interview');
+INSERT INTO Advice(Advice,Username)
+VALUES('Find time between work and play.','Myron R');
+INSERT INTO Advice_Keyword(Advice_ID,Keyword)
+VALUES(2,'Personal Life');
+INSERT INTO Advice(Advice,Username)
+VALUES('Have a high GPA to get into Grad School','Zotius Helle');
+INSERT INTO Advice_Keyword(Advice_ID,Keyword)
+VALUES(3,'Undergrad');
+INSERT INTO Advice_Keyword(Advice_ID,Keyword)
+VALUES(3,'Postgrad');
+INSERT INTO Advice(Advice,Username)
+VALUES('Be nice to people','Myron R');
+INSERT INTO Advice_Keyword(Advice_ID,Keyword)
+VALUES(4,'Career Advice');
