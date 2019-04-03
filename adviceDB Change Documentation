@@ -1,6 +1,7 @@
-“Name” attribute reversed in mysql, changed attribute name to PName
+ “Name” attribute reversed in mysql, changed attribute name to PName
 Removed FAS.Enum Table, replaced with FAS Enum col in Person
 Person.MajorField refers to database Person, changed name to Person_MajorField to resolve conflict
 “Group” name not allowed, changed table name to Club and Group name to Club_Name
 Removed accreditation
 Resource table removed
+Changed College Enrollment Val Enum column to ‘0-4999’,-5000-15000’,’15000+’ to increase specificity
