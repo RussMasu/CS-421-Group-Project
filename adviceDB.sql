@@ -63,7 +63,7 @@ FOREIGN KEY(Advice_ID) REFERENCES Advice(Advice_ID),
 PRIMARY KEY(Advice_ID,Keyword)
 );
 CREATE TABLE Job(
-Job_ID TINYINT NOT NULL,
+Job_ID int(6) NOT NULL AUTO_INCREMENT,
 Job_Title varchar(100) NOT NULL,
 Pay DECIMAL(11,2),
 Salaried Boolean,
@@ -72,7 +72,7 @@ Benefits varchar(1000),
 PRIMARY KEY (Job_ID)
 );
 CREATE TABLE Job_Person(
-Job_ID TINYINT NOT NULL,
+Job_ID int(6) NOT NULL,
 Username varchar(20) NOT NULL,
 Start_Date date NOT NULL,
 End_Date date,
@@ -82,19 +82,19 @@ FOREIGN KEY (Username) REFERENCES Person(Username)
 );
 CREATE TABLE Company(
 Company_Name varchar(100) NOT NULL,
-Num_Emp TINYINT,
-Address varchar(40) NOT NULL,
+Num_Emp int(8),
+Address varchar(100) NOT NULL,
 PRIMARY KEY (Company_Name)
 );
 CREATE TABLE Company_Job(
 Company_Name varchar(100) NOT NULL,
-Job_ID TINYINT NOT NULL,
+Job_ID int NOT NULL,
 FOREIGN KEY (Company_Name) REFERENCES Company(Company_Name),
 FOREIGN KEY (Job_ID) REFERENCES Job(Job_ID),
 PRIMARY KEY (Company_Name, Job_ID)
 );
 CREATE TABLE Company_Industry(
-Company_Name varchar(20) NOT NULL,
+Company_Name varchar(100) NOT NULL,
 Industry ENUM('Basic Industries','Capital Goods','Consumer Durables',
 'Consumer Non-Durables','Consumer Services','Energy','Finance',
 'Healthcare','Public Utilities','Technology', 'Transporation',
@@ -132,6 +132,7 @@ INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
 VALUES('Kaya G',NULL,'Faculty','2010-03-12',NULL);
 INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
 VALUES('Lane Burton','Lane N. Burton','Faculty','2020-03-02','555-465-7125, 55 Rainbow Street, Up Town, HI, Burton@uni.edu');
+
 INSERT INTO Person_MajorField(Major_Field,Username)
 VALUES('Computer Science','ZacP');
 INSERT INTO Person_MajorField(Major_Field,Username)
@@ -150,12 +151,14 @@ INSERT INTO Person_MajorField(Major_Field,Username)
 VALUES('Computer Science','Shaelaw');
 INSERT INTO Person_MajorField(Major_Field,Username)
 VALUES('Biology','Shaelaw');
+
 INSERT INTO Club(Club_Name,Site_link)
 VALUES('Honor Society',NULL);
 INSERT INTO Club(Club_Name,Site_link)
 VALUES('Association for Computing Machinery','www.acm.org');
 INSERT INTO Club(Club_Name,Site_link)
 VALUES('Circle K International','www.circlek.org');
+
 INSERT INTO Club_Person(Club_Name,Username)
 VALUES('Circle K International','MrX');
 INSERT INTO Club_Person(Club_Name,Username)
@@ -166,12 +169,14 @@ INSERT INTO Club_Person(Club_Name,Username)
 VALUES('Association for Computing Machinery','MrGreen');
 INSERT INTO Club_Person(Club_Name,Username)
 VALUES('Honor Society','Zotius Helle');
+
 INSERT INTO School(School_Name,Address,Enrollment_Val)
 VALUES('University of Hawaii at Hilo','200 W Kawili St, Hilo HI 96720','0-4999');
 INSERT INTO School(School_Name,Address,Enrollment_Val)
 VALUES('University of Hawaii at Manoa','2500 Campus Rd, Honolulu, HI 96822','5000-15000');
 INSERT INTO School(School_Name,Address,Enrollment_Val)
 VALUES('Hawaii Community College','1175 Manono Str, Hilo HI 96720','0-4999');
+
 INSERT INTO School_Person(School_Name,Username,Start_Date,End_Date)
 VALUES('University of Hawaii at Hilo','Kaya G','1989-06-12','1993-06-10');
 INSERT INTO School_Person(School_Name,Username,Start_Date,End_Date)
@@ -184,6 +189,7 @@ INSERT INTO School_Person(School_Name,Username,Start_Date,End_Date)
 VALUES('University of Hawaii at Hilo','Sven47','2016-08-12',NULL);
 INSERT INTO School_Person(School_Name,Username,Start_Date,End_Date)
 VALUES('Hawaii Community College','ZacP','2017-08-15',NULL);
+
 INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
 VALUES('University of Hawaii at Hilo','Kaya G','BS Computer Science');
 INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
@@ -198,6 +204,7 @@ INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
 VALUES('University of Hawaii at Manoa','Shaelaw','MS Microbiolgy');
 INSERT INTO SchoolPerson_Degree(School_Name,Username,Degree)
 VALUES('University of Hawaii at Hilo','Sven47','BA English');
+
 INSERT INTO Advice(Advice,Username)
 VALUES('Use Career Builder and be yourself.','Paprika');
 INSERT INTO Advice_Keyword(Advice_ID,Keyword)
@@ -216,3 +223,64 @@ INSERT INTO Advice(Advice,Username)
 VALUES('Be nice to people','Myron R');
 INSERT INTO Advice_Keyword(Advice_ID,Keyword)
 VALUES(4,'Career Advice');
+
+INSERT INTO Job(Job_Title,Pay,Salaried,Interview_Process, Benefits)
+VALUES('Software Engineer',60000,1,NULL,'Medical and Dental');
+INSERT INTO Job(Job_Title,Pay,Salaried,Interview_Process, Benefits)
+VALUES('Senior Software Engineer',70000,1,'Standard web application, then phone interviews, then in-person interviews','Medical and Dental');
+INSERT INTO Job(Job_Title,Pay,Salaried,Interview_Process, Benefits)
+VALUES('Mechanical Engineer',84000,1,'In-person interview, need knowledge of CAD','Medical');
+INSERT INTO Job(Job_Title,Pay,Salaried,Interview_Process, Benefits)
+VALUES('Waiter',13.25,0,NULL,NULL);
+INSERT INTO Job(Job_Title,Pay,Salaried,Interview_Process, Benefits)
+VALUES('Research and Development Department Manager',120000,1,NULL,'Medical and Dental');
+
+INSERT INTO Job_Person(Job_ID, Username, Start_Date, End_Date)
+VALUES(1,'ZacP','2005-03-01', '2007-05-30');
+INSERT INTO Job_Person(Job_ID, Username, Start_Date, End_Date)
+VALUES(4,'ZacP','2007-06-01', NULL);
+INSERT INTO Job_Person(Job_ID, Username, Start_Date, End_Date)
+VALUES(2,'RRandal','2006-08-25', NULL);
+INSERT INTO Job_Person(Job_ID, Username, Start_Date, End_Date)
+VALUES(3,'Tilly Burton','2018-09-01', NULL);
+INSERT INTO Job_Person(Job_ID, Username, Start_Date, End_Date)
+VALUES(1,'Shaelaw','2014-01-15', NULL);
+INSERT INTO Job_Person(Job_ID, Username, Start_Date, End_Date)
+VALUES(5,'Sven47','2009-07-23', NULL);
+
+INSERT INTO Company(Company_Name, Num_Emp, Address)
+VALUES('Jane Marr Studios Programming Solutions', 15, '1205 Kinoole Street, Hilo, HI 96720');
+INSERT INTO Company(Company_Name, Num_Emp, Address)
+VALUES('Boeing Commercial Airplanes', 40000, 'P. O. Box 3707 Seattle, Washington 98124');
+INSERT INTO Company(Company_Name, Num_Emp, Address)
+VALUES('Southside Bar and Grill', 42, '16th Place, 22 Street, Smallville, Kentucky 94182');
+INSERT INTO Company(Company_Name, Num_Emp, Address)
+VALUES('Conagra Foods', 400000, 'Conagra Brands 222 W. Merchandise Mart Plaza Suite 1300 Chicago, IL 60654');
+INSERT INTO Company(Company_Name, Num_Emp, Address)
+VALUES('New Day Supplementals', 500, '66 Orden Ave, Cheyenne, Wyoming 30742');
+
+INSERT INTO Company_Job(Company_Name,Job_ID)
+VALUES('Jane Marr Studios Programming Solutions',1);
+INSERT INTO Company_Job(Company_Name,Job_ID)
+VALUES('Jane Marr Studios Programming Solutions',2);
+INSERT INTO Company_Job(Company_Name,Job_ID)
+VALUES('Boeing Commercial Airplanes',3);
+INSERT INTO Company_Job(Company_Name,Job_ID)
+VALUES('Southside Bar and Grill',4);
+INSERT INTO Company_Job(Company_Name,Job_ID)
+VALUES('Conagra Foods',5);
+INSERT INTO Company_Job(Company_Name,Job_ID)
+VALUES('New Day Supplementals',5);
+
+INSERT INTO Company_Industry(Company_Name, Industry)
+VALUES('Jane Marr Studios Programming Solutions', 'Consumer Services');
+INSERT INTO Company_Industry(Company_Name, Industry)
+VALUES('Boeing Commercial Airplanes', 'Transporation');
+INSERT INTO Company_Industry(Company_Name, Industry)
+VALUES('Boeing Commercial Airplanes', 'Technology');
+INSERT INTO Company_Industry(Company_Name, Industry)
+VALUES('Southside Bar and Grill', 'Consumer Services');
+INSERT INTO Company_Industry(Company_Name, Industry)
+VALUES('Conagra Foods', 'Consumer Non-Durables');
+INSERT INTO Company_Industry(Company_Name, Industry)
+VALUES('New Day Supplementals', 'Consumer Non-Durables');
