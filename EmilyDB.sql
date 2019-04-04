@@ -35,3 +35,17 @@ Industry_ID ENUM('Small', 'Medium', 'Large') NOT NULL,
 PRIMARY KEY (Company_Name, Industry_ID),
 FOREIGN KEY (Company_Name) REFERENCES Company(Company_Name)
 );
+
+
+INSERT INTO Job(Job_ID,Job_Title,Pay,Salaried,Interview Process, Benefits)
+VALUES(000001,'Software Engineer',60000,1,NULL,'Medical and Dental');
+INSERT INTO Job(Job_ID,Job_Title,Pay,Salaried,Interview Process, Benefits)
+VALUES(000002,'Software Engineer',70000,1,'Standard web application, then phone interviews, then in-person interviews','Medical and Dental');
+INSERT INTO Job(Job_ID,Job_Title,Pay,Salaried,Interview Process, Benefits)
+VALUES(000003,'Mechanical Engineer',84000,1,'In-person interview, need knowledge of CAD','Medical');
+INSERT INTO Job(Job_ID,Job_Title,Pay,Salaried,Interview Process, Benefits)
+VALUES(000004,'Waiter',13.25,0,NULL,NULL);
+INSERT INTO Job(Job_ID,Job_Title,Pay,Salaried,Interview Process, Benefits)
+VALUES(000005,'Research and Development Department Manager',120000,1,NULL,'Medical and Dental');
+INSERT INTO Job(Job_ID,Job_Title,Pay,Salaried,Interview Process, Benefits)
+VALUES(000006,'CEO',400000,1,'Promoted internally','Medical and Dental');
