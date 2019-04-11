@@ -2,7 +2,8 @@ CREATE DATABASE adviceDB;
 USE adviceDB;
 CREATE TABLE Person (
 Username varchar(20) NOT NULL,
-PName varchar(100),
+FirstName varchar(100),
+LastName varchar(100),
 Graduation_Date date,
 Contact_Info varchar(1000),
 FAS_Val ENUM('Faculty','Alumni','Student'),
@@ -102,36 +103,36 @@ Industry ENUM('Basic Industries','Capital Goods','Consumer Durables',
 FOREIGN KEY (Company_Name) REFERENCES Company(Company_Name),
 PRIMARY KEY (Company_Name, Industry)
 );
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('ZacP','Zac_Perry','Student','2020-05-01','zacp@fakemail.com, 555 Urban Heights, HI');
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('SpinyPhish','Kayla Matthews','Student','2021-05-01','kaybay@fakemail.com');
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('MrX',NULL,NULL,NULL,NULL);
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('Tilly Burton','Tilly Burton','Student',NULL,'555-465-7125, 55 Rainbow Street, Up Town, HI, TBurton@uni.edu');
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('rbot15',NULL,'Student','2022-04-30',NULL);
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('Zotius Helle','Zotius Helle','Alumni','1950-06-10','zohelle@fakemail.com');
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('Sven47','Sven Asketilll','Alumni','1975-06-21',NULL);
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('Shaelaw','Shannon Larson','Alumni',NULL,'shal@fmail.com');
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('Madaline W W',NULL,'Alumni',NULL,NULL);
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('Paprika','Bella Asketill',NULL,NULL,'basket@fmail.com, 555 Hilo Bay, Hilo HI 96720');
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('MrGreen','Rajnish Green','Faculty','1960-12-25','mrg@uni.edu University of Hawaii at Hilo');
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('RRandal','Ray Randall','Faculty',NULL,NULL);
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('Myron R','Myron Reducto','Faculty','1992-04-02',NULL);
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('Kaya G',NULL,'Faculty','2010-03-12',NULL);
-INSERT INTO Person(Username,Pname,FAS_VAl,Graduation_Date,Contact_Info)
-VALUES('Lane Burton','Lane N. Burton','Faculty','2020-03-02','555-465-7125, 55 Rainbow Street, Up Town, HI, Burton@uni.edu');
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('ZacP','Zac','Perry','Student','2020-05-01','zacp@fakemail.com, 555 Urban Heights, HI');
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('SpinyPhish','Kayla','Matthews','Student','2021-05-01','kaybay@fakemail.com');
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('MrX',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Tilly Burton','Tilly','Burton','Student',NULL,'555-465-7125, 55 Rainbow Street, Up Town, HI, TBurton@uni.edu');
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('rbot15',NULL,NULL,'Student','2022-04-30',NULL);
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Zotius Helle','Zotius','Helle','Alumni','1950-06-10','zohelle@fakemail.com');
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Sven47','Sven','Asketilll','Alumni','1975-06-21',NULL);
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Shaelaw','Shannon','Larson','Alumni',NULL,'shal@fmail.com');
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Madaline W W',NULL,NULL,'Alumni',NULL,NULL);
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Paprika','Bella','Asketill',NULL,NULL,'basket@fmail.com, 555 Hilo Bay, Hilo HI 96720');
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('MrGreen','Rajnish','Green','Faculty','1960-12-25','mrg@uni.edu University of Hawaii at Hilo');
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('RRandal','Ray','Randall','Faculty',NULL,NULL);
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Myron R','Myron','Reducto','Faculty','1992-04-02',NULL);
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Kaya G',NULL,NULL,'Faculty','2010-03-12',NULL);
+INSERT INTO Person(Username,FirstName,LastName,FAS_VAl,Graduation_Date,Contact_Info)
+VALUES('Lane Burton','Lane','Burton','Faculty','2020-03-02','555-465-7125, 55 Rainbow Street, Up Town, HI, Burton@uni.edu');
 
 INSERT INTO Person_MajorField(Major_Field,Username)
 VALUES('Computer Science','ZacP');
@@ -272,6 +273,7 @@ VALUES('Conagra Foods',5);
 INSERT INTO Company_Job(Company_Name,Job_ID)
 VALUES('New Day Supplementals',5);
 
+
 INSERT INTO Company_Industry(Company_Name, Industry)
 VALUES('Jane Marr Studios Programming Solutions', 'Consumer Services');
 INSERT INTO Company_Industry(Company_Name, Industry)
@@ -284,3 +286,10 @@ INSERT INTO Company_Industry(Company_Name, Industry)
 VALUES('Conagra Foods', 'Consumer Non-Durables');
 INSERT INTO Company_Industry(Company_Name, Industry)
 VALUES('New Day Supplementals', 'Consumer Non-Durables');
+
+CREATE INDEX idx_LastName
+ON Person(LastName);
+CREATE INDEX idx_FirstName
+ON Person(FirstName);
+CREATE INDEX idx_JobTitle
+ON Job(Job_Title);
