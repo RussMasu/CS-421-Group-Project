@@ -5,3 +5,4 @@ Person.MajorField refers to database Person, changed name to Person_MajorField t
 Removed accreditation
 Resource table removed
 Changed College Enrollment Val Enum column to ‘0-4999’,-5000-15000’,’15000+’ to increase specificity
+Split Pname column into FirstName,LastName
