@@ -9,7 +9,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="language" content="english" />
+	
+	<style>
 
+input[type=text], select {
+  width: 30%;
+  padding: 6px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 
 
   </head>
@@ -24,16 +57,16 @@
       <h2>General</h2>
       <p>
       <label for="USERNAME">Username:</label>
-      <input type="varchar(20)" name="username" id="USERNAME" /></p>
+      <input type="text" name="username" id="USERNAME" maxlength='40'/></p>
       <p>
       <label for="NAME">Name:</label>
-      <input type="varchar(100)" name="name" id="NAME" /></p>
+      <input type="text" name="name" id="NAME" maxlength='100' /></p>
       <p>
 	  <label for="GRADUATION">Graduation:</label>
       <input type="date" name="graduation" id="GRADUATION" /></p>
 	  <p>
       <label for="CONTACT">Contct Info:</label>
-      <input type="varchar(1000)" name="contact" id="CONTACT" /></p>
+      <input type="text" name="contact" id="CONTACT" maxlength='1000' /></p>
 	  
     <div id="major">
         
@@ -41,13 +74,13 @@
     <div class="r-group">
             <p>
                 <label for="major_0_name" data-pattern-text="Major/Field +=1:">Major/Field 1:</label>
-                <input type="varchar(100)" name="major[0][name]" id="major_0_name" class="form-control" data-pattern-name="major[++][name]" data-pattern-id="major_++_name">
+                <input type="text" name="major[0][name]" id="major_0_name" class="form-control" data-pattern-name="major[++][name]" data-pattern-id="major_++_name" maxlength='100'>
             </p>
             <p>
                 <!-- Add a remove button for the item. If one didn't exist, it would be added to overall group -->
                 <button type="button" class="r-btnRemove btn btn-danger" style="display: none;" value="">Remove -</button>
             </p>
-			<br />
+			
         </div></div>
 		
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
@@ -92,7 +125,7 @@
 			</p>
 			 <p>
                 <label for="degree_0_name" data-pattern-text="Degree +=1:">Degree 1:</label>
-                <input type="varchar(40)" name="degree[0][name]" id="degree_0_name" class="form-control" data-pattern-name="degree[++][name]" data-pattern-id="degree_++_name">
+                <input type="text" name="degree[0][name]" id="degree_0_name" class="form-control" data-pattern-name="degree[++][name]" data-pattern-id="degree_++_name" maxlength='40'>
             </p>
 			<p>
                 <label for="school_start_0_name" data-pattern-text="Degree Start Date +=1:">Degree Start Date 1:</label>
@@ -106,7 +139,7 @@
                 <!-- Add a remove button for the item. If one didn't exist, it would be added to overall group -->
                 <button type="button" class="r-btnRemove btn btn-danger" style="display: none;" value="">Remove -</button>
             </p>
-			<br />
+			
         </div></div>
 		
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
@@ -146,11 +179,12 @@
         <button type="button" class="r-btnAdd btn btn-primary">Advice +</button>
     <div class="a-group">
 			<p>
-                <label for="advice_0_name" data-pattern-text="Advice +=1:">Advice 1:</label>
-                <input type="varchar(10000)" name="advice[0][name]" id="advice_0_name" class="form-control" data-pattern-name="advice[++][name]" data-pattern-id="advice_++_name">
-            </p>
+                <label for="advice_0_name" data-pattern-text="Advice +=1:">Advice 1:</label> <br />
+                <textarea rows='10' cols='100' for="advice_0_name"><input type="text" name="advice[0][name]" id="advice_0_name" class="form-control" data-pattern-name="advice[++][name]" data-pattern-id="advice_++_name" maxlength='10000'>
+				</textarea>
+			</p>
 			<p>
-                <label for="advice_keyword_0_name" data-pattern-text="Advice Keywords +=1:">Advice Keywords 1:</label>
+                <label for="advice_keyword_0_name" data-pattern-text="Advice Keywords +=1:">Advice Keywords 1:</label><br />
                 <select name="advice_keyword[0][name]"  id="advice_keyword_0_name" class="form-control" data-pattern-name="advice_keyword[++][name]" data-pattern-id="advice_keyword_++_name" size='5' multiple>
 					<option value="interview">Interview</option>
 					<option value="career_advice">Career Advice</option>
@@ -164,7 +198,7 @@
                 <!-- Add a remove button for the item. If one didn't exist, it would be added to overall group -->
                 <button type="button" class="r-btnRemove btn btn-danger" style="display: none;" value="">Remove -</button>
             </p>
-			<br />
+			
         </div></div>
 		
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
@@ -191,7 +225,71 @@
       }
   ]);
   </script>
+	  <!--  Job INFORMATION * * * -->
+	<h2>Jobs</h2>
 	  
+	   <div id="jobs">
+        
+        <button type="button" class="r-btnAdd btn btn-primary">Job +</button>
+    <div class="j-group">
+			<p>
+                <label for="job_title_0_name" data-pattern-text="Job Title +=1:">Job Title 1:</label> <br />
+                <input type="text" name="job_title[0][name]" id="job_title_0_name" class="form-control" data-pattern-name="job_title[++][name]" data-pattern-id="job_title_++_name" maxlength='100'>
+			</p>
+			<p>
+                <label for="pay_0_name" data-pattern-text="Pay +=1:">Pay 1:</label> <br />
+                <input type="number" name="pay[0][name]" id="pay_0_name" class="form-control" data-pattern-name="pay[++][name]" data-pattern-id="pay_++_name" maxlength='9'>
+			</p>
+			<p>
+                <label for="salaried_0_name" data-pattern-text="Salaried +=1:">Salaried 1:</label><br />
+                <select name="salaried[0][name]"  id="salaried_0_name" class="form-control" data-pattern-name="salaried[++][name]" data-pattern-id="salaried_++_name" size='2'>
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</select>
+			</p>
+			<p>
+                <label for="interview_0_name" data-pattern-text="Interview Process +=1:">Interview Process 1:</label> <br />
+                <textarea rows='10' cols='100' for="interview_0_name"><input type="text" name="interview[0][name]" id="interview_0_name" class="form-control" data-pattern-name="interview[++][name]" data-pattern-id="interview_++_name" maxlength='10000'>
+				</textarea>
+			</p>
+			<p>
+                <label for="benefits_0_name" data-pattern-text="Benefits +=1:">Benefits 1:</label> <br />
+                <input type="text" name="benefits[0][name]" id="benefits_0_name" class="form-control" data-pattern-name="benefits[++][name]" data-pattern-id="benefits_++_name" maxlength='1000'>
+			</p>
+			<!-- and start, end, company info-->
+			<p>
+                <!-- Add a remove button for the item. If one didn't exist, it would be added to overall group -->
+                <button type="button" class="r-btnRemove btn btn-danger" style="display: none;" value="">Remove -</button>
+            </p>
+        </div></div>
+		
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="jquery.form-repeater.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  $('#jobs').repeater({ //edit this code if copy paste
+      btnAddClass: 'r-btnAdd',
+      btnRemoveClass: 'r-btnRemove',
+      groupClass: 'j-group',  //edit this code if copy paste
+      minItems: 1,
+      maxItems: 0,
+      startingIndex: 0,
+      showMinItemsOnLoad: true,
+      reindexOnDelete: true,
+      repeatMode: 'append',
+      animation: 'fade',
+      animationSpeed: 400,
+      animationEasing: 'swing',
+      clearValues: true
+  }, [
+      {
+          "job_title[0][name]":"",
+		  "pay[0][name]":"",
+		  "salaried[0][name]":"",
+		  "interview[0][name]":"",
+		  "benefits[0][name]":"",
+      }
+  ]);
+  </script>  
 	  
 	  
 	  
