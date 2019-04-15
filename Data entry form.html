@@ -13,8 +13,8 @@
 
 
   </head>
-
-
+<body>
+<h1>Personal Information</h1>
   <div class="pattern" role="presentation"></div>
   <div role="main" id="mainContent" style="padding-left: 3.25em; padding-bottom: 3.25em">
 
@@ -47,6 +47,7 @@
                 <!-- Add a remove button for the item. If one didn't exist, it would be added to overall group -->
                 <button type="button" class="r-btnRemove btn btn-danger" style="display: none;" value="">Remove -</button>
             </p>
+			<br />
         </div></div>
 		
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
@@ -68,7 +69,7 @@
       clearValues: true
   }, [
       {
-          "major[0][name]":"Major or Field"
+          "major[0][name]":""
       }
   ]);
   </script>
@@ -76,20 +77,128 @@
 
 
 <!--  SCHOOL INFORMATION * * * -->
-	<h2>School</h2>
-	<p>
-      <label for="SCHOOL">School:</label>
-      <select name="school" id="SCHOOL">
-		<option value=""></option>
-        <option value="uh_hilo">University of Hawaii at Hilo</option>
-      </select></p>
-      <p>
-	  <label for="SCHOOL_START">School Start Date:</label>
-      <input type="date" name="school_start" id="SCHOOL_START" /></p>
-	  <p>
-	  <label for="SCHOOL_END">School End Date:</label>
-      <input type="date" name="school_end" id="SCHOOL_END" /></p>
-
+	<h2>Degrees</h2>
+	  
+	   <div id="school">
+        
+        <button type="button" class="r-btnAdd btn btn-primary">Degree +</button>
+    <div class="s-group">
+            <p>
+                <label for="school_0_name" data-pattern-text="School +=1:">School 1:</label>
+                <select name="school[0][name]"  id="school_0_name" class="form-control" data-pattern-name="school[++][name]" data-pattern-id="school_++_name">
+            		<option value=""></option>
+					<option value="uh_hilo">University of Hawaii at Hilo</option>
+				</select>
+			</p>
+			 <p>
+                <label for="degree_0_name" data-pattern-text="Degree +=1:">Degree 1:</label>
+                <input type="varchar(40)" name="degree[0][name]" id="degree_0_name" class="form-control" data-pattern-name="degree[++][name]" data-pattern-id="degree_++_name">
+            </p>
+			<p>
+                <label for="school_start_0_name" data-pattern-text="Degree Start Date +=1:">Degree Start Date 1:</label>
+                <input type="date" name="school_start[0][name]" id="school_start_0_name" class="form-control" data-pattern-name="school_start[++][name]" data-pattern-id="school_start_++_name">
+            </p>
+			<p>
+                <label for="school_end_0_name" data-pattern-text="Degree End Date +=1:">Degree End Date 1:</label>
+                <input type="date" name="school_end[0][name]" id="school_end_0_name" class="form-control" data-pattern-name="school_end[++][name]" data-pattern-id="school_end_++_name">
+            </p>
+            <p>
+                <!-- Add a remove button for the item. If one didn't exist, it would be added to overall group -->
+                <button type="button" class="r-btnRemove btn btn-danger" style="display: none;" value="">Remove -</button>
+            </p>
+			<br />
+        </div></div>
+		
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="jquery.form-repeater.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  $('#school').repeater({ //edit this code if copy paste
+      btnAddClass: 'r-btnAdd',
+      btnRemoveClass: 'r-btnRemove',
+      groupClass: 's-group',  //edit this code if copy paste
+      minItems: 1,
+      maxItems: 0,
+      startingIndex: 0,
+      showMinItemsOnLoad: true,
+      reindexOnDelete: true,
+      repeatMode: 'append',
+      animation: 'fade',
+      animationSpeed: 400,
+      animationEasing: 'swing',
+      clearValues: true
+  }, [
+      {
+          "school[0][name]":"",
+		  "degree[0][name]":"",
+		  "school_start[0][name]":"",
+		  "school_end[0][name]":""
+      }
+  ]);
+  </script>
+   
+	  
+	  
+	  <!--  ADVICE INFORMATION * * * -->
+	<h2>Advice</h2>
+	  
+	   <div id="advice">
+        
+        <button type="button" class="r-btnAdd btn btn-primary">Advice +</button>
+    <div class="a-group">
+			<p>
+                <label for="advice_0_name" data-pattern-text="Advice +=1:">Advice 1:</label>
+                <input type="varchar(10000)" name="advice[0][name]" id="advice_0_name" class="form-control" data-pattern-name="advice[++][name]" data-pattern-id="advice_++_name">
+            </p>
+			<p>
+                <label for="advice_keyword_0_name" data-pattern-text="Advice Keywords +=1:">Advice Keywords 1:</label>
+                <select name="advice_keyword[0][name]"  id="advice_keyword_0_name" class="form-control" data-pattern-name="advice_keyword[++][name]" data-pattern-id="advice_keyword_++_name" size='5' multiple>
+					<option value="interview">Interview</option>
+					<option value="career_advice">Career Advice</option>
+					<option value="personal_life">Personal Life</option>
+					<option value="undergrad">Undergrad</option>
+					<option value="postgrad">Postgrad</option>
+				</select>
+			</p>
+			<p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+            <p>
+                <!-- Add a remove button for the item. If one didn't exist, it would be added to overall group -->
+                <button type="button" class="r-btnRemove btn btn-danger" style="display: none;" value="">Remove -</button>
+            </p>
+			<br />
+        </div></div>
+		
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="jquery.form-repeater.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  $('#advice').repeater({ //edit this code if copy paste
+      btnAddClass: 'r-btnAdd',
+      btnRemoveClass: 'r-btnRemove',
+      groupClass: 'a-group',  //edit this code if copy paste
+      minItems: 1,
+      maxItems: 0,
+      startingIndex: 0,
+      showMinItemsOnLoad: true,
+      reindexOnDelete: true,
+      repeatMode: 'append',
+      animation: 'fade',
+      animationSpeed: 400,
+      animationEasing: 'swing',
+      clearValues: true
+  }, [
+      {
+          "advice[0][name]":"",
+		  "advice_keyword[0][name]":""
+      }
+  ]);
+  </script>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 
 </div>
 
@@ -101,5 +210,5 @@
 	</div>
 	
 
-
+</body>
 </html>
