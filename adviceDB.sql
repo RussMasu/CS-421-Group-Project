@@ -224,6 +224,10 @@ INSERT INTO Advice(Advice,Username)
 VALUES('Be nice to people','Myron R');
 INSERT INTO Advice_Keyword(Advice_ID,Keyword)
 VALUES(4,'Career Advice');
+INSERT INTO Advice(Advice,Username)
+VALUES('Study hard','Kaya G');
+INSERT INTO Advice_Keyword(Advice_ID,Keyword)
+VALUES(5,'Undergrad');
 
 INSERT INTO Job(Job_Title,Pay,Salaried,Interview_Process, Benefits)
 VALUES('Software Engineer',60000,1,NULL,'Medical and Dental');
@@ -248,6 +252,11 @@ INSERT INTO Job_Person(Job_ID, Username, Start_Date, End_Date)
 VALUES(1,'Shaelaw','2014-01-15', NULL);
 INSERT INTO Job_Person(Job_ID, Username, Start_Date, End_Date)
 VALUES(5,'Sven47','2009-07-23', NULL);
+INSERT INTO Job_Person(Job_ID, Username, Start_Date, End_Date)
+VALUES(2,'Myron R','1996-07-23', NULL);
+INSERT INTO Job_Person(Job_ID, Username, Start_Date, End_Date)
+VALUES(3,'Paprika','181-06-23', NULL);
+
 
 INSERT INTO Company(Company_Name, Num_Emp, Address)
 VALUES('Jane Marr Studios Programming Solutions', 15, '1205 Kinoole Street, Hilo, HI 96720');
