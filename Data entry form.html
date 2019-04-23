@@ -256,7 +256,38 @@ div {
                 <label for="benefits_0_name" data-pattern-text="Benefits +=1:">Benefits 1:</label> <br />
                 <input type="text" name="benefits[0][name]" id="benefits_0_name" class="form-control" data-pattern-name="benefits[++][name]" data-pattern-id="benefits_++_name" maxlength='1000'>
 			</p>
+			
 			<!-- and start, end, company info-->
+			<p>
+                <label for="company_0_name" data-pattern-text="Company +=1:">Company 1:</label> <br />
+                <input type="text" name="company[0][name]" id="company_0_name" class="form-control" data-pattern-name="company[++][name]" data-pattern-id="company_++_name" maxlength='100'>
+			</p>
+			<p>
+                <label for="emp_0_name" data-pattern-text="Number of Employees +=1:">Number of Employees 1:</label> <br />
+                <input type="number" name="emp[0][name]" id="emp_0_name" class="form-control" data-pattern-name="emp[++][name]" data-pattern-id="emp_++_name" maxlength='6'>
+			</p>
+			<p>
+                <label for="c_address_0_name" data-pattern-text="Address +=1:">Address 1:</label> <br />
+                <input type="text" name="c_address[0][name]" id="c_address_0_name" class="form-control" data-pattern-name="c_address[++][name]" data-pattern-id="c_address_++_name" maxlength='100'>
+			</p>	
+			<p>
+                <label for="industry_0_name" data-pattern-text="Industry +=1:">Industry 1:</label><br />
+                <select name="industry[0][name]"  id="industry_0_name" class="form-control" data-pattern-name="industry[++][name]" data-pattern-id="industry_++_name" size='12' multiple>
+					<option value="basic_industries">Basic Industries</option>
+					<option value="capital_goods">Captial Goods</option>
+					<option value="consumer_durables">Consumer Durables</option>
+					<option value="consumer_nondurables">Consumer Non-Durables</option>
+					<option value="consumer_services">Consumer Services</option>
+					<option value="energy">Energy</option>
+					<option value="finance">Finance</option>
+					<option value="healthcare">Healthcare</option>
+					<option value="public_utilities">Public Utilities</option>
+					<option value="technology">Technology</option>
+					<option value="transportation">Transportation</option>
+					<option value="misc">Miscellaeneous</option>
+				</select>
+			</p>	
+			<p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>			
 			<p>
                 <!-- Add a remove button for the item. If one didn't exist, it would be added to overall group -->
                 <button type="button" class="r-btnRemove btn btn-danger" style="display: none;" value="">Remove -</button>
@@ -287,18 +318,20 @@ div {
 		  "salaried[0][name]":"",
 		  "interview[0][name]":"",
 		  "benefits[0][name]":"",
+		  "company[0][name]":"",
+		  "emp[0][name]":"",
+		  "c_address[0][name]":"",
+		  "industry[0][name]":""
       }
   ]);
-  </script>  
-
-	  <!--  Group INFORMATION * * * -->	    
   
+	  <!--  Group INFORMATION * * * -->  
   </script>  
 	<h2>Clubs/Groups/Affiliations</h2>
 	  
 	   <div id="club">
         
-        <button type="button" class="r-btnAdd btn btn-primary">Advice +</button>
+        <button type="button" class="r-btnAdd btn btn-primary">Affiliation +</button>
     <div class="c-group">
 			<p>
                 <label for="club_0_name" data-pattern-text="Club +=1:">Club 1:</label> <br />
@@ -336,16 +369,12 @@ div {
   }, [
       {
           "club[0][name]":"",
-		  "site[0][name]":""
+          "site[0][name]":""
       }
   ]);
 </script>  
 	  
-	  	  
-	  
-	  
-	  
-	  
+
 	  
 
 </div>
