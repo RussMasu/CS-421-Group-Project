@@ -4,13 +4,17 @@
   <head>
     <title>Weli Data Entry</title>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
     <meta name="language" content="english" />
-	
-	<style>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
 
 input[type=text], select {
   width: 30%;
@@ -37,16 +41,34 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
+
 </style>
 
 
   </head>
 <body>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="homepage.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+    <a href="addinfo.html" class="w3-bar-item w3-button w3-padding-large w3-white">Input Data</a>
+    <a href="query.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">View Data</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="addinfo.html" class="w3-bar-item w3-button w3-padding-large">Input Data</a>
+    <a href="query.html" class="w3-bar-item w3-button w3-padding-large">View Data</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Weli Project</h1>
+</header>
+
+
 <h1>Personal Information</h1>
   <div class="pattern" role="presentation"></div>
   <div role="main" id="mainContent" style="padding-left: 3.25em; padding-bottom: 3.25em">
@@ -58,7 +80,7 @@ div {
       <p>
       <label for="USERNAME">Username:</label>
       <input type="text" name="username" id="USERNAME" maxlength='40'/></p>
-	<p>
+      <p>
       <label for="F_NAME">First Name:</label>
       <input type="text" name="f_name" id="F_NAME" maxlength='100' /></p>
       <p>
@@ -109,8 +131,8 @@ div {
       }
   ]);
   </script>
-   
-
+  <body>
+ 
 
 <!--  SCHOOL INFORMATION * * * -->
 	<h2>Degrees</h2>
@@ -372,7 +394,7 @@ div {
   }, [
       {
           "club[0][name]":"",
-          "site[0][name]":""
+		  "site[0][name]":""
       }
   ]);
 </script>  
@@ -389,6 +411,27 @@ div {
     </form>
 	</div>
 	
+	<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Weli Project</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
 
 </body>
 </html>
